@@ -547,7 +547,10 @@
         }
 
         if (isLibCanvas && canvas) {
-          document.body.removeChild(canvas);
+          if (document.body.contains(canvas)) {
+            document.body.removeChild(canvas);
+          }
+
           canvas = null;
           initialized = false;
         }
